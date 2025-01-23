@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manga Reader</title>
     <link rel="icon" href="/path/to/favicon.ico">
-    @vite('resources/css/app.css')
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @livewireStyles
-    @vite('resources/js/app.js') <!-- Ensure Alpine.js is included via Vite -->
 </head>
 <body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
     <header class="bg-white dark:bg-gray-800 shadow py-4">
@@ -20,7 +19,7 @@
                     <span x-show="!darkMode">☀️ Light Mode</span>
                     <span x-show="darkMode">🌙 Dark Mode</span>
                 </button>
-                <img src="/path/to/profile-picture.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full">
+                <img src="OIP.jpeg" alt="Profile Picture" class="w-10 h-10 rounded-full">
             </div>
         </div>
     </header>
@@ -34,7 +33,7 @@
             <p>&copy; {{ date('Y') }} Manga Reader. All rights reserved.</p>
         </div>
     </footer>
-
     @livewireScripts
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

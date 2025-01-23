@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manga Reader</title>
+    <link rel="icon" href="/path/to/favicon.ico">
     <?php echo app('Illuminate\Foundation\Vite')('resources/css/app.css'); ?>
     <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::styles(); ?>
 
@@ -13,17 +14,28 @@
     <header class="bg-white dark:bg-gray-800 shadow py-4">
         <div class="container mx-auto flex justify-between items-center px-4">
             <h1 class="text-2xl font-bold">Manga Reader</h1>
-            <button @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)"
-                    class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded focus:outline-none transition-colors duration-300">
-                <span x-show="!darkMode">☀️ Light Mode</span>
-                <span x-show="darkMode">🌙 Dark Mode</span>
-            </button>
+            <div class="flex items-center">
+                <button @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)"
+                        class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded focus:outline-none transition-colors duration-300 mr-4"
+                        aria-label="Toggle Dark Mode">
+                    <span x-show="!darkMode">☀️ Light Mode</span>
+                    <span x-show="darkMode">🌙 Dark Mode</span>
+                </button>
+                <img src="/path/to/profile-picture.jpg" alt="Profile Picture" class="w-10 h-10 rounded-full">
+            </div>
         </div>
     </header>
 
     <main class="container mx-auto mt-6 px-4">
         <?php echo $__env->yieldContent('content'); ?>
     </main>
+
+    <footer class="bg-white dark:bg-gray-800 shadow py-4 mt-6">
+        <div class="container mx-auto text-center px-4">
+            <p>&copy; <?php echo e(date('Y')); ?> Manga Reader. All rights reserved.</p>
+        </div>
+    </footer>
+
     <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::scripts(); ?>
 
 </body>

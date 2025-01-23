@@ -1,4 +1,4 @@
-@extends('components.layouts.app')
+@extends('components/layouts.app')
 @section('content')
     <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold mb-6">Manga List</h2>
