@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manga Reader</title>
     <link rel="icon" href="/path/to/favicon.ico">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
     @livewireStyles
 </head>
 <body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
@@ -34,6 +35,5 @@
         </div>
     </footer>
     @livewireScripts
-    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
